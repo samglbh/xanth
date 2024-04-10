@@ -19,8 +19,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             . . . . . . e e e . . . . . . . 
             `, mySprite, randint(-50, 50), randint(-50, 50))
     } else if (talent == "teleportation") {
-        pause(5000)
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile7`)
+    } else if (talent == "shrinking") {
+        mySprite.setFlag(SpriteFlag.GhostThroughWalls, true)
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile1`, function (sprite, location) {
